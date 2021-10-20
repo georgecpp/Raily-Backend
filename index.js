@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-// const cors = require('cors');
+const cors = require('cors');
 const mongoose = require('mongoose');
 
 
@@ -22,7 +22,7 @@ mongoose.connect(process.env.DB_CONNECT, () => {
 
 // middleware
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 
 // Route Middlewares
