@@ -33,7 +33,7 @@ const registerUser = async (req,res) => {
 
 const createAndAssignJWT = (user, res) => {
      // Create and assign JWT for this session
-     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn:'30d'});
      res.header('auth-token-raily', token).send(token);
 }
 
